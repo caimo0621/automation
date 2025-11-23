@@ -41,8 +41,9 @@ streamlit run paper_digest_assistant.py
 - 🔑 Enter your OpenAI API key directly in the web interface
 - 📄 Two input modes: URL or Raw Text
 - 🤖 Automatic summarization using OpenAI GPT-4o-mini
-- 💾 Saves all summaries to `reading_log.jsonl` locally
+- 📄 Generates formatted Word documents (.docx) with all summaries
 - 📝 Structured reading notes with key information extraction
+- 📥 Download button for easy access to generated documents
 
 ## How to Use
 
@@ -53,17 +54,36 @@ streamlit run paper_digest_assistant.py
    - **Raw Text**: Paste paper text directly
 4. Click "Generate Digest"
 5. View the formatted reading note
-6. All summaries are automatically saved to `reading_log.jsonl`
+6. Download the generated Word document (.docx) using the download button
 
 ## Output
 
-The app creates a `reading_log.jsonl` file in the same directory, containing all your paper summaries with timestamps.
+The app generates a Word document (.docx) for each paper summary, saved locally with a timestamped filename (e.g., `paper_digest_Title_20251123_185220.docx`). Each document contains:
+
+- Document information (date, source type, URL)
+- Title
+- Field or Topic
+- Research Question
+- Methodology
+- Key Findings (bulleted list)
+- Limitations
+- Personal Takeaway
 
 ## Requirements
 
 - Python 3.7+
 - OpenAI API key
 - Internet connection (for fetching papers and API calls)
+
+## Dependencies
+
+All dependencies are listed in `requirements.txt`:
+- streamlit
+- requests
+- beautifulsoup4
+- pypdf
+- openai
+- python-docx
 
 ## Notes
 
